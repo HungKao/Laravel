@@ -1,0 +1,81 @@
+ 
+ ※指令
+
+ 1. 使用者設定
+
+    git config --global user.name "HungKao"             | 使用 git 前先做的，設定使用者的 Email 信箱以及使用者名稱
+    git config --global user.email "jackkao8752@gmail.com"
+
+    git config --list | 確認
+
+ 2. 全域設定
+
+    git config --global alias.st status                 | 設定輸入 st 會等同輸入 status，自由設定
+
+    git config --global alias.l "log --oneline --graph" | 同上
+
+
+ 2. git init          | 新專案開始要先做的，將當前資料夾變成 git Repo，也就是 git 的倉庫(初始化這個目錄，讓 Git 對這個目錄開始進行版控)
+
+    git add README.md | README.md 是 GitHub 專案的預設說明頁面
+
+ 3. git status        | 查看當前專案狀態
+
+ 4. git add 檔案名稱  | 將檔案交給 Git，讓 Git 開始「追蹤」它
+
+    git add *.html    | 把所有附檔名是 html 的檔案全部都加到暫存區
+
+    $ git add --all   | 把全部的檔案加到暫存區
+
+    (若 add 檔案後又再編輯，對 Git 來說，編輯的內容並沒有再次被加到暫存區，所以若要保存修改需再 add 一次。
+
+
+ 5. git commit -m "說明文字"           | 把暫存區的內容提交到倉庫裡存檔
+
+    git commit -a -m "說明文字"        | 用 -a 參數跳過 add 階段直接 commit ( 只對已經存在 Repository 的檔案有效 )
+
+    git commit --amend -m "修改後文字" | 修改最後一次 commit 的說明文字
+
+ 6. 檢視 Git 紀錄
+
+    git log                     | 檢視 Git 紀錄，由新到舊
+
+    git log --oneline --author="Sherly\|Eddie" | 查詢 Sherly 以及 Eddie 的 Commit 紀錄」
+
+    git log --oneline --grep="關鍵字"          | commit 訊息裡有包含關鍵字的
+
+    git log -S "關鍵字"                        | commit 的檔案內容裡有關鍵字的
+
+    git log --oneline --since="9am" --until="12am" --after="2017-01" | 從 2017 年 1 月之後，每天早上 9 點到 12 點的 Commit
+
+
+  7. 上傳到 GitHub 
+
+     git remote add origin https://github.com/HungKao/Laravel.git | 新增遠端節點
+
+     git push origin master | push master 分支
+   
+ 
+---------------------------------------------------------------------------------------
+
+ ※ cmd 指令
+
+ Windows   MacOS / Linux   說明
+
+   cd	        cd	   切換目錄
+
+   cd	        pwd	   取得目前所在的位置
+
+   dir	        ls	   列出目前的檔案列表
+
+   mkdir        mkdir	   建立新的目錄
+
+   無	        touch	   建立檔案
+
+   copy	        cp	   複製檔案
+
+   move	        mv	   移動檔案
+
+   del	        rm	   刪除檔案
+
+   cls	        clear	   清除畫面上的內容

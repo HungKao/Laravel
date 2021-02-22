@@ -1,0 +1,97 @@
+
+ ※環境：
+
+ 1. 安裝 composer (windows 使用 Composer-Setup.exe )
+
+ 2. 使用 cmd 下 composer global require "laravel/installer" 指令安裝laravel/installer命令列工具
+    
+    composer後面多了一個 global是全域執行，表示在composer根目錄底下執行
+    require的指令是用來安裝composer套件
+
+ 3. 路徑 path 設定好以讓 composer 找的到 laravel 執行檔 (並沒有設定 3 就成功執行 4 了，疑似因為我的 composer 是覆蓋 xampp 的 php?)
+
+ 4. cd 到指定目錄並使用 laravel new xxx 就能建立名為 xxx 的 laravel 新專案
+
+----------------------------------------------------------------------------------------------------------
+
+ ※目錄：
+
+ app       | 這個目錄是專案的核心目錄，許多程式邏輯都會在這邊。其中MVC架構中的C(Controller)，也在這個目錄底下。
+
+ bootstrap | 乍看之下好像在哪邊看過…等等！是css的框架嗎？ 不是的！這裡是放置框架的啟動程式碼及cache，能加快效能
+
+ config    | 放置一些設定檔案
+
+ database  | 這邊是放置資料庫的資料表結構及一些基礎資料(如假資料)
+
+ public    | 專案網站的跟目錄。裡頭有個 index.php 是整個程式的進入點
+
+ resources | 有三個主要資料夾：views 視圖檔案、langs 語系檔案(如多語言語系)、及 assets 須預先編譯才能使用的檔案(如前端的 gulp 及 sass 檔案)
+
+ storage   | 儲存使用者上傳的檔案，如圖片、影像等
+
+ vendor    | 這個目錄是由 composer 建立的，所有透過 composer 安裝的元件都會在這裡面
+
+ 看完主要目錄後，來了解根目錄下的“檔案”：
+
+ .env         | 用 environment 環境這個單字來記，這個檔案就是專案的環境檔案，包含資料庫的連線方式，因此每個專案的環境檔案可能都不同
+
+ .env.example | 環境檔案的範例檔，如過手殘不小心改壞了.env 檔案，可以複製這個檔案再修改
+
+  artisan     | artisan 的程式進入檔，也因此，輸入 artisan 指令只能在專案目錄下操作
+
+
+  利用 Composer 指令生成 Laravel 專案後，其中有兩個主要的檔案
+
+  1. composer.json | 記錄了這個專案本身所使用的版本及套件
+
+  2. composer.lock | 是一個鎖定套件的檔案，專案安裝完相依套件後，會將這些相依套件寫入這個檔案。因此若有其他人要接手這個專案，
+
+     只要將這個檔案傳給其他人並在該檔案目錄(.json .lock 都要有)下指令 composer install 就能確保大家都是下載完全相同版本的套件及相依套件(vender 資料夾)，
+     省去不同版本間的錯誤。
+
+     若不小心刪除了檔案，也能透過指令 composer update 根據 json 檔案的資訊下載相依套件，並再次生成 lock 檔案。
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ ※指令工具
+
+ composer 是 php 的命令列工具，artisan 是 laraval 的命令列工具。
+
+ artisan 語法：「 php artisan 指令 選項 參數 」 
+
+ 1. php artisan --help    | 指令描述及詳細說明
+
+ 2. php artisan --version | 查詢專案框架的版本
+
+ 3. php artisan serve | laravel內建的本機伺服器 (瀏覽器輸入 http://127.0.0.1:8000 )
+
+ 4. php artisan ui vue --auth | 加入身份驗證功能 § 需先使用 composer require laravel/ui 安裝 Package
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+  MYSQL: https://home.gamer.com.tw/creationDetail.php?sn=4409413
+
+  專案: https://ithelp.ithome.com.tw/articles/10215728
+
+
+ ※修改預設專案
+
+ 1. 修改 resources/views/welcome.blade.php 首頁內容 (blade 為一強大模板 (Template)，只要 save 畫面就會改變，不用重啟 server。)
+
+    (1) 使用指令 4 加入身份驗證功能 (login register)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
